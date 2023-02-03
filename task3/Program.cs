@@ -1,15 +1,15 @@
-﻿int[] CreateNumbersArray()
+﻿double[] CreateNumbersArray()
 {
-    int[] array = new int[6];
+    double[] array = new double[6];
     Random rnd = new Random();
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = rnd.Next(100, 1000);
+        array[i] = rnd.Next(100,1000);
     }
     return array;
 }
 
-void PrintArray(int[] array, string message)
+void PrintArray(double[] array, string message)
 {
     System.Console.WriteLine(message);
     for (int i = 0; i < array.Length; i++)
@@ -19,10 +19,10 @@ void PrintArray(int[] array, string message)
     System.Console.WriteLine();
 }
 
-(int, int) Diff(int[] array)
+(double, double) Diff(double[] array)
 {
-    int max = array[0];
-    int min = array[0];
+    double max = array[0];
+    double min = array[0];
     for (int i = 0; i <array.Length; i++)
     {
         if(array[i] < min)
@@ -38,7 +38,7 @@ void PrintArray(int[] array, string message)
 }
 
 
-int[] BaseArray = CreateNumbersArray();
+double[] BaseArray = CreateNumbersArray();
 PrintArray(BaseArray, "Базовый массив: ");
-(int min, int max) = Diff(BaseArray);
+(double min, double max) = Diff(BaseArray);
 System.Console.WriteLine($"Разница между максимальным {max} и минимальным значение {min} равна {max - min}");
